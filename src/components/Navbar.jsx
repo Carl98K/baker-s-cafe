@@ -2,9 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import { useContext } from 'react';
 import { Link } from "react-router-dom";
 import { ShopContext } from '../context/shop-context';
-import CloseIcon from "../assets/images/close.png";
 import { Products } from "../products";
 import CartItem from "./cart/cart-item";
+import HamburgerPic from "/src/assets/images/Hamburger.png";
+import ProfilePic from "/src/assets/images/Profile.png";
+import CartPic from "/src/assets/images/Cart.png";
+import CloseIcon from "../assets/images/close.png";
 
 export default function Navbar() {
 
@@ -57,7 +60,7 @@ export default function Navbar() {
         <nav className="max-[480px]:gap-5 z-10 fixed top-11 left-0 flex flex-row justify-center items-center gap-50 w-[100%] h-[80px] bg-[#fdf4e8] shadow-xl">
 
             <div className="max-[1024px]:block hidden absolute left-5">
-                <img onClick={() => setIsOpenSideNav(true)} src="/src/assets/images/Hamburger.png" alt="hamburger icon" className="max-[480px]:w-5.5 max-[600px]:w-6 max-[768px]:w-7 max-[1024px]:w-7 max-[480px]:h-5.5 max-[600px]:h-6 max-[768px]:h-7 max-[1024px]:h-7" />
+                <img onClick={() => setIsOpenSideNav(true)} src={HamburgerPic} alt="hamburger icon" className="max-[480px]:w-5.5 max-[600px]:w-6 max-[768px]:w-7 max-[1024px]:w-7 max-[480px]:h-5.5 max-[600px]:h-6 max-[768px]:h-7 max-[1024px]:h-7" />
             </div>
 
             <div className={"bg-black fixed inset-0 pointer-events-none z-40 transition-opacity duration-300 " + (isOpenSideNav ? "opacity-70 pointer-events-auto" : "opacity-0 pointer-events-none")}>
@@ -74,9 +77,9 @@ export default function Navbar() {
             </div>
 
             <div className="max-[1024px]:right-5 max-[480px]:gap-3 absolute right-30 flex flex-row justify-center items-center gap-5">
-                <img src="/src/assets/images/Profile.png" alt="profile icon" className="max-[480px]:w-4.5 max-[600px]:w-5 max-[480px]:h-4.5 max-[600px]:h-5 hover:cursor-pointer w-5.5 h-5.5" />
+                <img src={ProfilePic} alt="profile icon" className="max-[480px]:w-4.5 max-[600px]:w-5 max-[480px]:h-4.5 max-[600px]:h-5 hover:cursor-pointer w-5.5 h-5.5" />
 
-                <img onClick={() => setIsOpen(true)} src="/src/assets/images/Cart.png" alt="profile icon" className="max-[480px]:w-4.5 max-[480px]:h-4.5 hover:cursor-pointer w-5.5 h-5.5" />
+                <img onClick={() => setIsOpen(true)} src={CartPic} alt="profile icon" className="max-[480px]:w-4.5 max-[480px]:h-4.5 hover:cursor-pointer w-5.5 h-5.5" />
             </div>
 
             <div className={"bg-black fixed inset-0 pointer-events-none z-40 transition-opacity duration-300 " + (isOpen ? "opacity-70 pointer-events-auto" : "opacity-0 pointer-events-none")}>
@@ -119,7 +122,7 @@ export default function Navbar() {
             <div ref={componentRefSideNav} className={"max-[1024px]:block max-[480px]:w-[150px] max-[600px]:w-[200px] max-[768px]:w-[250px] max-[1024px]:w-[300px] hidden bg-[#fff3e3] w-[400px] h-screen absolute top-0 left-[-100%]  ease-in-out duration-[0.5s] z-50 pointer-events-auto " + (isOpenSideNav ? "left-[0%]" : "")}>
 
                 <div className="mt-8 ml-3 flex flex-col justify-start items-start gap-10">
-                    <img onClick={() => setIsOpenSideNav(false)} src="/src/assets/images/close.png" alt="close icon" className='max-[480px]:w-[18px] max-[480px]:h-[18px] max-[600px]:w-[19px] max-[600px]:h-[19px] max-[768px]:w-[20px] max-[1024px]:w-[22px] max-[768px]:h-[20px] max-[1024px]:h-[22px]' />
+                    <img onClick={() => setIsOpenSideNav(false)} src={CloseIcon} alt="close icon" className='max-[480px]:w-[18px] max-[480px]:h-[18px] max-[600px]:w-[19px] max-[600px]:h-[19px] max-[768px]:w-[20px] max-[1024px]:w-[22px] max-[768px]:h-[20px] max-[1024px]:h-[22px]' />
                     <Link to="/" className="max-[480px]:text-[1rem] max-[600px]:text-[1.2rem] max-[768px]:text-[1.3rem] max-[1024px]:text-[1.4rem] text-gray-700">Home</Link>
                     <Link to="/products" className="max-[480px]:text-[1rem] max-[600px]:text-[1.2rem] max-[768px]:text-[1.3rem] max-[1024px]:text-[1.4rem] text-gray-700">Our Products</Link>
                     <Link to="/about" className="max-[480px]:text-[1rem] max-[600px]:text-[1.2rem] max-[768px]:text-[1.3rem] max-[1024px]:text-[1.4rem] text-gray-700">About Us</Link>
