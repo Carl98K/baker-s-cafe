@@ -1,0 +1,116 @@
+#my-custom-slider .slick-prev:before,
+#my-custom-slider .slick-next:before {
+  color: rgba(48, 48, 48, 0.76)!important;
+  opacity: 1!important;
+  font-size: 35px!important;
+}
+
+#my-custom-slider .slick-prev{
+  left: -40px!important;
+  z-index: 5!important;
+}
+
+#my-custom-slider .slick-next{
+  right: -20px!important;
+  z-index: 5!important;
+}
+
+#my-custom-slider .slick-slide{
+ line-height: 0!important;
+}
+
+@media (max-width: 480px) {
+    #my-custom-slider .slick-prev:before,
+    #my-custom-slider .slick-next:before {
+  color: rgba(48, 48, 48, 0.76)!important;
+  opacity: 1!important;
+  font-size: 25px!important;
+}
+
+#my-custom-slider .slick-prev{
+  left: -30px!important;
+  z-index: 5!important;
+}
+
+#my-custom-slider .slick-next{
+  right: -25px!important;
+  z-index: 5!important;
+}
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    #my-custom-slider .slick-prev:before,
+    #my-custom-slider .slick-next:before {
+  color: rgba(48, 48, 48, 0.76)!important;
+  opacity: 1!important;
+  font-size: 25px!important;
+}
+
+#my-custom-slider .slick-prev{
+  left: -30px!important;
+  z-index: 5!important;
+}
+
+#my-custom-slider .slick-next{
+  right: -24px!important;
+  z-index: 5!important;
+}
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+    #my-custom-slider .slick-prev:before,
+    #my-custom-slider .slick-next:before {
+  color: rgba(48, 48, 48, 0.76)!important;
+  opacity: 1!important;
+  font-size: 27px!important;
+}
+
+#my-custom-slider .slick-prev{
+  left: -33px!important;
+  z-index: 5!important;
+}
+
+#my-custom-slider .slick-next{
+  right: -24px!important;
+  z-index: 5!important;
+}
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    #my-custom-slider .slick-prev:before,
+    #my-custom-slider .slick-next:before {
+  color: rgba(48, 48, 48, 0.76)!important;
+  opacity: 1!important;
+  font-size: 30px!important;
+}
+
+#my-custom-slider .slick-prev{
+  left: -36px!important;
+  z-index: 5!important;
+}
+
+#my-custom-slider .slick-next{
+  right: -24px!important;
+  z-index: 5!important;
+}
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #my-custom-slider .slick-prev:before,
+    #my-custom-slider .slick-next:before {
+  color: rgba(48, 48, 48, 0.76)!important;
+  opacity: 1!important;
+  font-size: 35px!important;
+}
+
+#my-custom-slider .slick-prev{
+  left: -43px!important;
+  z-index: 5!important;
+}
+
+#my-custom-slider .slick-next{
+  right: -27px!important;
+  z-index: 5!important;
+}
+}
+

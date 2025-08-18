@@ -1,0 +1,20 @@
+.slick-prev:before,
+.slick-next:before {
+  color: rgba(255, 255, 255, 0.473)!important;
+  opacity: 0.5!important;
+  font-size: 50px!important;
+}
+
+.slick-prev{
+  left: 30px!important;
+  z-index: 10!important;
+}
+
+.slick-next{
+  right: 60px!important;
+  z-index: 10!important;
+}
+
+.slick-slide{
+ line-height: 0!important;
+}

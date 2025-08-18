@@ -1,0 +1,9 @@
+
+@import "tailwindcss";
+
+@layer base {
+  body{
+    padding-top: 125px;
+  }
+}
+
