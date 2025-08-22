@@ -1,5 +1,5 @@
-import { createContext, useState } from "react"
-import { Products } from '../products'; 
+import { createContext, useEffect, useState } from "react"
+import { Products } from '../products';
 
 export const ShopContext = createContext(null);
 
@@ -13,10 +13,22 @@ function getDefaultCart() {
     return cart;
 }
 
-
 export default function ShopContextProvider(props) {
 
     const [cartItems, setCartItems] = useState(getDefaultCart());
+    const [cartAmount, setCartAmount] = useState(0);
+
+    let sum = Object.values(cartItems).reduce((accummulator, currentvalue) => {
+        if (typeof currentvalue === "number") {
+            return accummulator + currentvalue;
+        }
+
+        return accummulator;
+    }, 0);
+
+    useEffect(() => {
+        setCartAmount(sum);
+    }, [sum]);
 
     function addToCart(itemID) {
         setCartItems((prevItem) => ({ ...prevItem, [itemID]: prevItem[itemID] + 1 }));
@@ -33,8 +45,8 @@ export default function ShopContextProvider(props) {
     function getCartTotal() {
         let totalAmount = 0;
 
-        for(const item in cartItems){
-            if(cartItems[item] > 0){
+        for (const item in cartItems) {
+            if (cartItems[item] > 0) {
                 let itemInfo = Products.find((product) => product.id === Number(item));
 
                 totalAmount += cartItems[item] * itemInfo.price;
@@ -44,9 +56,7 @@ export default function ShopContextProvider(props) {
         return totalAmount;
     }
 
-    const contextValue = { cartItems, addToCart, removeFromCart, removeAllCart, getCartTotal };
-
-    console.log(cartItems);
+    const contextValue = { cartItems, cartAmount, addToCart, removeFromCart, removeAllCart, getCartTotal };
 
     return (
         <ShopContext.Provider value={contextValue}>

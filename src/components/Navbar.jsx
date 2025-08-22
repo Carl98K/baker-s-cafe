@@ -11,7 +11,7 @@ import CloseIcon from "../assets/images/close.png";
 
 export default function Navbar() {
 
-    const { cartItems, getCartTotal } = useContext(ShopContext);
+    const { cartItems, cartAmount, getCartTotal } = useContext(ShopContext);
 
     const cartTotalAmount = getCartTotal();
 
@@ -79,7 +79,12 @@ export default function Navbar() {
             <div className="max-[1024px]:right-5 max-[480px]:gap-3 absolute right-30 flex flex-row justify-center items-center gap-5">
                 <img src={ProfilePic} alt="profile icon" className="max-[480px]:w-4.5 max-[600px]:w-5 max-[480px]:h-4.5 max-[600px]:h-5 hover:cursor-pointer w-5.5 h-5.5" />
 
-                <img onClick={() => setIsOpen(true)} src={CartPic} alt="profile icon" className="max-[480px]:w-4.5 max-[480px]:h-4.5 hover:cursor-pointer w-5.5 h-5.5" />
+                <div className="relative">
+                    <img onClick={() => setIsOpen(true)} src={CartPic} alt="cart icon" className="max-[480px]:w-4.5 max-[480px]:h-4.5 hover:cursor-pointer w-5.5 h-5.5" />
+
+                    <div className={"max-[480px]:w-3.5 max-[480px]:h-3.5 max-[480px]:-top-2 max-[480px]:-right-2 max-[480px]:text-[0.6rem] max-[600px]:w-4 max-[600px]:h-4 max-[600px]:-top-2 max-[600px]:-right-2 max-[600px]:text-[0.65rem] absolute -top-3 -right-3 w-5 h-5 flex flex-row justify-center items-center rounded-2xl bg-red-500 text-[0.7rem] text-white " + (cartAmount > 0 ? "visible" : "invisible")} >{cartAmount}</div>
+                </div>
+
             </div>
 
             <div className={"bg-black fixed inset-0 pointer-events-none z-40 transition-opacity duration-300 " + (isOpen ? "opacity-70 pointer-events-auto" : "opacity-0 pointer-events-none")}>
