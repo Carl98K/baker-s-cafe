@@ -13,7 +13,7 @@ export default function Pastries(props) {
         <div>
 
             <div className='flex flex-col justify-center items-center'>
-                <div className='max-[480px]:w-[230px] max-[600px]:w-[250px] max-[768px]:w-[260px] max-[480px]:h-[230px] max-[600px]:h-[270px] max-[768px]:h-[260px] w-[280px] h-[250px]'>
+                <div className='max-[480px]:w-[200px] max-[600px]:w-[250px] max-[768px]:w-[260px] max-[480px]:h-[200px] max-[600px]:h-[270px] max-[768px]:h-[260px] w-[280px] h-[250px]'>
                     <img src={productImage} alt="image of pastry" className='w-full h-full object-cover shadow-xl rounded-[3px]' />
                 </div>
 

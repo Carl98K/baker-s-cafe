@@ -82,7 +82,7 @@ export default function Navbar() {
                 <div className="relative">
                     <img onClick={() => setIsOpen(true)} src={CartPic} alt="cart icon" className="max-[480px]:w-4.5 max-[480px]:h-4.5 hover:cursor-pointer w-5.5 h-5.5" />
 
-                    <div className={"max-[480px]:w-3.5 max-[480px]:h-3.5 max-[480px]:-top-2 max-[480px]:-right-2 max-[480px]:text-[0.6rem] max-[600px]:w-4 max-[600px]:h-4 max-[600px]:-top-2 max-[600px]:-right-2 max-[600px]:text-[0.65rem] absolute -top-3 -right-3 w-5 h-5 flex flex-row justify-center items-center rounded-2xl bg-red-500 text-[0.7rem] text-white " + (cartAmount > 0 ? "visible" : "invisible")} >{cartAmount}</div>
+                    <div className={"max-[480px]:w-3.5 max-[480px]:h-3.5 max-[480px]:-top-2 max-[480px]:-right-2 max-[600px]:w-4 max-[600px]:h-4 max-[600px]:-top-2 max-[600px]:-right-2 max-[600px]:text-[0.65rem] absolute -top-3 -right-3 w-5 h-5 flex flex-row justify-center items-center rounded-2xl bg-red-500 text-[0.7rem] text-white " + (cartAmount > 0 ? "visible" : "invisible")} >{cartAmount}</div>
                 </div>
 
             </div>
@@ -114,11 +114,10 @@ export default function Navbar() {
                     })}
                 </div>
 
-                <div className="flex flex-col justify-center items-center">
-                    <hr className="m-auto w-[90%] opacity-10" />
+                <div className="absolute top-180 right-0 left-0 flex flex-col justify-center items-center">
 
-                    <p className="max-[480px]:text-[1rem] max-[600px]:text-[1.1rem] max-[768px]:text-[1.2rem] mt-[30px] text-[1.4rem] ">Total: &#8369;{cartTotalAmount}</p>
-                    <button className="max-[480px]:text-[0.8rem] max-[600px]:text-[0.9rem] max-[768px]:text-[0.95rem] max-[480px]:w-18 max-[600px]:w-20 max-[768px]:w-22 max-[480px]:h-10 max-[600px]:h-10 max-[768px]:h-11 hover:cursor-pointer hover:bg-amber-500 mt-[10px] border-1 border-gray-700 bg-amber-400 w-24 h-12 rounded-[8px] text-[1.1rem] text-gray-800 font-semibold">Checkout</button>
+                    <p className="max-[480px]:text-[1rem] max-[600px]:text-[1.1rem] max-[768px]:text-[1.2rem] text-[1.4rem] ">Total: &#8369;{cartTotalAmount}</p>
+                    <button className="max-[480px]:text-[0.8rem] max-[600px]:text-[0.9rem] max-[768px]:text-[0.95rem] max-[480px]:w-18 max-[600px]:w-20 max-[768px]:w-22 max-[480px]:h-9.5 max-[600px]:h-10 max-[768px]:h-11 hover:cursor-pointer hover:bg-amber-500 mt-[10px] border-1 border-gray-700 bg-amber-400 w-24 h-12 rounded-[8px] text-[1.1rem] text-gray-800 font-semibold">Checkout</button>
                 </div>
 
             </div>
